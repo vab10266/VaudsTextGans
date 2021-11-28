@@ -35,7 +35,7 @@ scriptname = 'main.py'
 # ===Program===
 if_test = int(False)
 run_model = 'sentigan'
-k_label = 2
+k_label = 10
 CUDA = int(True)
 oracle_pretrain = int(True)
 gen_pretrain = int(False)
@@ -46,9 +46,9 @@ ADV_train_epoch = 100
 tips = 'SentiGAN experiments'
 
 # ===Oracle or Real===
-if_real_data = [int(False), int(True), int(True)]
-dataset = ['oracle', 'mr15', 'amazon_app_book']
-vocab_size = [5000, 0, 0]
+if_real_data = [int(True), int(False), int(True), int(True)]
+dataset = ['amazon', 'oracle', 'mr15', 'amazon_app_book']
+vocab_size = [0, 5000, 0, 0]
 
 # ===Basic Param===
 data_shuffle = int(False)
