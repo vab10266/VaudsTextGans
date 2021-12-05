@@ -93,6 +93,8 @@ class BasicInstructor:
                 inp, target = inp.cuda(), target.cuda()
 
             hidden = model.init_hidden(data_loader.batch_size)
+            print("in: ")
+            print(inp, hidden)
             pred = model.forward(inp, hidden)
             loss = criterion(pred, target.view(-1))
             self.optimize(optimizer, loss, model)

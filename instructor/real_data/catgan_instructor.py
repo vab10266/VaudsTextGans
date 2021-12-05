@@ -29,8 +29,9 @@ from utils.text_process import tensor_to_tokens, write_tokens
 class CatGANInstructor(BasicInstructor):
 
     def __init__(self, opt):
-        # print("k_label: ", cfg.k_label)
+        print("k_label: ", cfg.k_label)
         super(CatGANInstructor, self).__init__(opt)
+        print("back")
 
         # generator, discriminator
         self.gen = CatGAN_G(cfg.k_label, cfg.mem_slots, cfg.num_heads, cfg.head_size, cfg.gen_embed_dim,
@@ -70,7 +71,7 @@ class CatGANInstructor(BasicInstructor):
         if cfg.gen_pretrain:
             for i in range(cfg.n_parent):
                 self.log.info('Load MLE pretrained generator gen: {}'.format(cfg.pretrained_gen_path + '%d' % i))
-                self.parents[i] = torch.load(cfg.pretrained_gen_path + '%d' % 0, map_location='cpu')
+                self.parents[i] = torch.load("pretrain\\amazon\\gen_MLE_00000.pt", map_location='cpu')
 
         if cfg.CUDA:
             self.gen = self.gen.cuda()
