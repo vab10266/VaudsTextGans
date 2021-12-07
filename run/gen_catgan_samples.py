@@ -28,7 +28,7 @@ else:
 # Executables
 executable = 'python'
 rootdir = '../'
-scriptname = 'main.py'
+scriptname = 'gen_samples.py'
 
 # ===Program===
 # CatGAN: Catgory text generation model
